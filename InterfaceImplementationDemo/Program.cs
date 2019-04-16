@@ -12,6 +12,18 @@ namespace InterfaceImplementationDemo
 	{
 		public static void Main()
 		{
+			// IComparerDemo();
+				
+			var point = new Point(5);
+			foreach (var coordinate in point) WriteLine(coordinate);
+
+			// WriteLine(new Point());
+			
+			ReadKey(true);
+		}
+
+		private static void IComparerDemo()
+		{
 			var originalListOfPersons = new List<Person>
 			{
 				Person.Parse(
@@ -54,8 +66,6 @@ namespace InterfaceImplementationDemo
 			Print(sortedByFullName, $"{NewLine}Упорядочены по имени:");
 
 			var list = originalListOfPersons.Sort(x => x.Age, (x, y) => x - y);
-			
-			ReadKey(true);
 		}
 
 		private static void Print(IEnumerable<Person> persons, string message = null)
